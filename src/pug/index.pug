@@ -1,0 +1,14 @@
+doctype html
+html 
+  head
+    meta(name="viewport", content="width=device-width, initial-scale=1")
+    title Test task
+    link(href='./css/all.css', rel='stylesheet')
+  body
+    main.main
+      .main__inner
+        header.header
+          include components/header-panel
+          include components/header-message
+        include components/content-table
+    script(src="./js/all.js")

@@ -1,0 +1,41 @@
+@import './../constants';
+
+.content-table{
+  display: grid;
+  grid-template-columns: minmax(254px,auto) minmax(86px, 89px) repeat(14,43px);
+  grid-auto-rows: 50px;
+  max-width: 100%;
+  margin: 0 auto;
+  overflow-x: auto;
+  &__item{
+    border: 1px solid rgba(17, 34, 62, 0.05);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    &--red{
+      background: #FFF6F6;
+    }
+    &--green{
+      background: #FAFFEE;
+    }
+    &--spoiler{
+      border: none;
+      display: none;
+      &--show{
+        display: flex;
+      }
+    }
+  }
+  &__checkbox{
+    margin-right: 20px;
+    width: 20px;
+    height: 20px;
+  }
+}
+
+@media (max-width: 500px){
+  .content-table{
+    grid-template-columns: minmax(207px,auto) minmax(56px,283px) repeat(14,43px);
+  }
+}

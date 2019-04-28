@@ -1,0 +1,44 @@
+@import './../constants';
+
+.btn-group{
+  display: flex;
+  &__item{
+    background: #FFFFFF;
+    border: 1px solid rgba(34,62,105,.1);
+    box-sizing: border-box;
+    outline: none;
+    width: 105px;
+    height: 40px;
+    font-family: @font;
+    font-size: 14px;
+    line-height: 9px;
+    padding: 4px 0 0;
+    &:not(.btn-group__item--active){
+      cursor: pointer;
+    }
+    &--left{
+      border-radius: 5px 0px 0px 5px;
+      &:not(.btn-group__item--active){
+        border-right: none;
+      }
+    }
+    &--right{
+      border-radius: 0 5px 5px 0;
+      &:not(.btn-group__item--active){
+        border-left: none;
+      }
+    }
+    &--active{
+      border-color: rgba(34, 62, 105, 0.2);
+    }
+  }
+}
+
+@media (max-width: 970px) and (min-width: 700px){
+  .btn-group{
+    width: 73%;
+    &__item{
+      font-size: 64%;
+    }
+  }
+}

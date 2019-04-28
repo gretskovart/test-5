@@ -1,0 +1,74 @@
+mixin content-item(value, background, quantity, status, statusVal)
+  .content-table__item.content(class = (background && background !== '') ? 'content-table__item--' + background : '')
+    case (status)
+      when 'decrease'
+        span.content__text--status.content__text--status--decrease= statusVal
+      when 'increase'
+        span.content__text--status.content__text--status--increase= statusVal
+      when 'new'
+        span.content__text--status.content__text--status--new= status
+    span.content__text= value
+    if (quantity && quantity !== '')
+      span.content__text--quantity= quantity
+
+- var i = 0;
+mixin item-twice
+  - i++
+  .content-table__item.table__item--title.sticky
+    label.checkbox.content-table__checkbox
+      input(type="checkbox").checkbox__input
+      span.checkbox__checkmark
+    span.table__item--title--text Тинькофф банк отзывы
+    span.table__item__favorite(class = (i === 1) ? 'table__item__favorite--active' : '')
+    span.table__item__arrow-spoiler(data-spoiler-num-arrow = '0' + i)
+  .content-table__item.table__item--frequency-val.sticky.sticky__second-col 2750
+  +content-item(62, '', 30, 'decrease', 1)
+  +content-item(48)
+  +content-item(37)
+  +content-item(62)
+  +content-item(44)
+  +content-item(89)
+  +content-item(74)
+  +content-item(35)
+  +content-item(62)
+  +content-item(59)
+  +content-item(88)
+  +content-item(74)
+  +content-item(26)
+  if (i === 3)
+    +content-item(97, 'green', '', 'new')
+  else if (i === 4)
+    +content-item(97, 'red')
+  else
+    +content-item(97)
+  .content-table__item.table__item--title.sticky
+    label.checkbox.content-table__checkbox
+      input(type="checkbox").checkbox__input
+      span.checkbox__checkmark
+    span.table__item--title--text Тинькофф банк
+    span.table__item__favorite
+    span.table__item__arrow-spoiler(data-spoiler-num-arrow = '1' + i, class = (i === 1) ? 'table__item__arrow-spoiler--show' : '')
+  .content-table__item.table__item--frequency-val.sticky.sticky__second-col 4150
+  +content-item(25)
+  +content-item(38)
+  +content-item(76)
+  +content-item(42)
+  +content-item(67, '', 30, 'decrease', 1)
+  +content-item(34, '', '', 'decrease', 1)
+  +content-item(62)
+  +content-item(74, '', '', 'decrease', 1)
+  +content-item(25)
+  +content-item(39)
+  +content-item(53)
+  +content-item(46)
+  +content-item(79)
+  if (i === 2)
+    +content-item(36, 'green', '', 'increase', 1)
+  else
+    +content-item(36)
+
++item-twice
+include content-table__spoiler
++item-twice
++item-twice
++item-twice

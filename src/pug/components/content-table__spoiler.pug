@@ -1,0 +1,38 @@
+- var numOfSpoiler = 11;
+
+mixin spoiler-img(img)
+  .content-table__item.content-table__item--spoiler.content-table__item--spoiler--show(data-spoiler-num = numOfSpoiler)
+    .spoiler-img(class = 'spoiler-img--' + img, data-img-type = img)
+
+mixin spoiler-img-string
+  +spoiler-img(1)
+  +spoiler-img(2)
+  +spoiler-img(3)
+  +spoiler-img(1)
+  +spoiler-img(2)
+  +spoiler-img(3)
+  +spoiler-img(1)
+  +spoiler-img(2)
+  +spoiler-img(3)
+  +spoiler-img(1)
+  +spoiler-img(2)
+  +spoiler-img(3)
+  +spoiler-img(1)
+  +spoiler-img(2)
+
+.content-table__item.content-table__item--spoiler.spoiler.content-table__item--spoiler--show.sticky(data-spoiler-num = numOfSpoiler)
+  button.spoiler__btn Просмотреть Топ-10
+.content-table__item.content-table__item--spoiler.content-table__item--spoiler--show.sticky.sticky__second-col(data-spoiler-num = numOfSpoiler)
++spoiler-img-string
+.content-table__item.content-table__item--spoiler.content-table__item--spoiler--show.sticky(data-spoiler-num = numOfSpoiler)
+.content-table__item.content-table__item--spoiler.content-table__item--spoiler--show.sticky.sticky__second-col(data-spoiler-num = numOfSpoiler)
++spoiler-img-string
+.content-table__item.content-table__item--spoiler.content-table__item--spoiler--show.sticky(data-spoiler-num = numOfSpoiler)
+.content-table__item.content-table__item--spoiler.content-table__item--spoiler--show.sticky.sticky__second-col(data-spoiler-num = numOfSpoiler)
++spoiler-img-string
+.content-table__item.content-table__item--spoiler.content-table__item--spoiler--show.sticky(data-spoiler-num = numOfSpoiler)
+.content-table__item.content-table__item--spoiler.content-table__item--spoiler--show.sticky.sticky__second-col(data-spoiler-num = numOfSpoiler)
++spoiler-img-string
+.content-table__item.content-table__item--spoiler.content-table__item--spoiler--show.sticky(data-spoiler-num = numOfSpoiler)
+.content-table__item.content-table__item--spoiler.content-table__item--spoiler--show.sticky.sticky__second-col(data-spoiler-num = numOfSpoiler)
++spoiler-img-string

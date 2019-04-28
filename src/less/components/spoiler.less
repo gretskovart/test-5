@@ -1,0 +1,31 @@
+@import './../constants';
+
+.spoiler{
+  justify-content: flex-start;
+  align-items: flex-end;
+  padding-left: 54px;
+  &__btn{
+    border: 1px solid rgba(34, 62, 105, .2);
+    box-sizing: border-box;
+    border-radius: 5px;
+    outline: none;
+    padding: 11px 21px 11px 20px;
+    width: 174px;
+    height: 32px;
+    font-size: 14px;
+    line-height: 10px;
+    color: #11223E;
+    font-family: @font;
+    background: #fff;
+    cursor: pointer;
+    &:hover{
+      border-color: rgba(34,62,105,.3);
+    }
+  }
+}
+
+@media (max-width: 500px){
+  .spoiler{
+    padding-left: 14px;
+  }
+}

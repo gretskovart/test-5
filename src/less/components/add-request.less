@@ -1,0 +1,24 @@
+@import './../constants';
+
+.add-request{
+  background: #FC3969;
+  box-shadow: 0px 3px 7px rgba(252, 57, 105, 0.3);
+  border-radius: 5px;
+  font-size: 16px;
+  line-height: 11px;
+  width: 169px;
+  height: 40px;
+  color: #fff;
+  outline: none;
+  font-family: @font;
+  cursor: pointer;
+  &:hover{
+    box-shadow: rgba(252, 57, 105, 0.3) -2px 4px 8px;
+  }
+}
+
+@media (max-width: 970px) and (min-width: 700px){
+  .add-request{
+    font-size: 69%;
+  }
+}

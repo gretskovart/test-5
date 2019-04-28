@@ -1,0 +1,69 @@
+@import './../constants';
+
+.header{
+  margin: 0 0 30px;
+  &__panel{
+    display: flex;
+    justify-content: space-between;
+    &__block{
+      display: flex;
+      height: 40px;
+    }
+  }
+  &__message{
+    background: rgba(248, 231, 28, .15);
+    border-radius: 5px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+    &__text{
+      margin-left: 46px;
+    }
+  }
+  &__search{
+    margin-right: 20px;
+  }
+  &__load-btn{
+    margin-right: 15px;
+  }
+  &__content__text{
+    font-size: 12px;
+    line-height: 8px;
+    color: rgba(17, 34, 62, .3);
+    font-family: @font;
+  }
+}
+
+@media (max-width: 970px) and (min-width: 700px){
+  .header__panel__block{
+    width: 38%;
+  }
+}
+@media (max-width: 699px){
+  .header__panel{
+    flex-direction: column;
+    height: 100px;
+  }
+}
+
+@media (max-width: 480px){
+  .header__panel{
+    justify-content: space-between;
+    height: 225px;
+    &__block{
+      flex-direction: column;
+      height: 105px;
+      justify-content: space-between;
+    }
+  }
+}
+
+@media (max-width: 540px){
+  .header__message{
+    flex-direction: column;
+    height: 80px;
+    justify-content: space-around;
+  }
+}

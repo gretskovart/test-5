@@ -1,0 +1,96 @@
+@import './../constants';
+
+.table{
+  &__item{
+    &--icons, &--title{
+      justify-content: flex-start;
+      padding-left: 14px;
+    }
+    &--title{
+      font-size: 14px;
+      line-height: 18px;
+      color: #11223E;
+      font-family: @font;
+      &:hover .table__item__favorite{
+       visibility: visible;
+      }
+    }
+    &--frequency{
+      padding-left: 15px;
+      font-size: 12px;
+      line-height: 15px;
+      color: rgba(17,34,62,.3);
+      font-family: @font;
+      &::after{
+        content: "";
+        background: url(./../images/stack/sprite.svg#arrow-bottom) 0 -1px no-repeat;
+        background-size: cover;
+        width: 6px;
+        height: 3px;
+        position: absolute;
+        right: 17px;
+      }
+      &-val{
+        font-size: 14px;
+        line-height: 8px;
+        color: #11223E;
+        font-family: @font;
+      }
+    }
+    &__favorite{
+      background: url(./../images/stack/sprite.svg#star) 0 0 no-repeat;
+      background-size: cover;
+      display: block;
+      width: 14px;
+      height: 14px;
+      right: 34px;
+      visibility: hidden;
+      cursor: pointer;
+      position: absolute;
+      right: 34px;
+      top: 17px;
+      &:hover:not(&--active){
+        background-image: url(./../images/stack/sprite.svg#star-hover);
+      }
+      &--active{
+        background-image: url(./../images/stack/sprite.svg#star-active);
+        visibility: visible;
+      }
+    }
+    &__arrow-spoiler{
+      background: url(./../images/stack/sprite.svg#arrow-right) -2px 0 no-repeat;
+      background-size: cover;
+      position: absolute;
+      height: 8.71px;
+      width: 5.06px;
+      right: 20.65px;
+      top: 20.65px;
+      cursor: pointer;
+      &--show{
+        transform: rotate(90deg);
+      }
+    }
+  }
+}
+
+@media (max-width: 890px) and (min-width: 700px){
+  .table__item--title{
+    line-height: 129%;
+  }
+}
+
+@media (max-width: 500px){
+  .table__item--title--text{
+    width: 100px;
+  }
+}
+
+@media (max-width: 500px){
+  .table__item--frequency{
+    padding-left: 5px;
+    &::after{
+      bottom: 5px;
+      left: 50%;
+    }
+  }
+}

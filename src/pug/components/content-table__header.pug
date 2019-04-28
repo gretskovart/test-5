@@ -1,0 +1,28 @@
+mixin header-content-item(date, quantity)
+  .content-table__item.header__content
+    span.header__content__text= date
+    if (quantity)
+      span.content__text--quantity= quantity
+
+.content-table__item.table__item--icons.sticky
+  label.checkbox.content-table__checkbox
+    input(type="checkbox").checkbox__input
+    span.checkbox__checkmark
+  a(href="#").icon.icon--trash
+  a(href="#").icon.icon--refresh
+  a(href="#").icon.icon--rocket
+.content-table__item.table__item--frequency.sticky.sticky__second-col Оценка частотн.
++header-content-item('25.06', 30)
++header-content-item('26.06')
++header-content-item('27.06')
++header-content-item('28.06')
++header-content-item('29.06')
++header-content-item('30.06')
++header-content-item('01.07')
++header-content-item('02.07')
++header-content-item('03.07')
++header-content-item('04.07')
++header-content-item('05.07')
++header-content-item('06.07')
++header-content-item('07.07')
++header-content-item('08.07')

@@ -1,0 +1,45 @@
+@import './../constants';
+
+.checkbox{
+  display: block;
+  position: relative;
+  cursor: pointer;
+  user-select: none;
+  &__input{
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+    &:checked ~ .checkbox__checkmark{
+      background-color: @checkbox-background-checked;
+      &::after{
+        display: block;
+      }
+    }
+  }
+  &__checkmark{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 20px;
+    width: 20px;
+    background-color: @checkbox-background;
+    border-radius: 5px;
+    &::after{
+      content: "";
+      position: absolute;
+      display: none;
+      left: 7px;
+      top: 2px;
+      width: 5px;
+      height: 10px;
+      border: solid white;
+      border-width: 0 3px 3px 0;
+      transform: rotate(45deg);
+    }
+  }
+  &:hover &__input:not(:checked) ~ &__checkmark{
+    background-color: darken(@checkbox-background, 20%);
+  }
+}

@@ -1,0 +1,52 @@
+@import './../constants';
+
+.content{
+  &__text{
+    font-size: 14px;
+    line-height: 8px;
+    color: #11223E;
+    font-family: @font;
+    &--quantity{
+      position: absolute;
+      bottom: 4px;
+      background: rgba(117, 185, 38, .3);
+      border-radius: 3px;
+      padding: 2px 5px 1px;
+      font-size: 10px;
+      line-height: 8px;
+      color: #355B08;
+    }
+    &--status{
+      &--decrease, &--increase, &--new{
+        position: absolute;
+        top: 5px;
+        right: 2px;
+        font-family: @font;
+      }
+      &--increase, &--new{
+        font-size: 10px;
+        line-height: 7px;
+        color: #417505;
+      }
+      &--increase::before, &--decrease::before{
+        width: 6px;
+        height: 3px;
+        left: -4px;
+        top: 3px;
+        content: '';
+        position: absolute;
+      }
+      &--increase::before{
+        background: url(./../images/stack/sprite.svg#arrow-up) no-repeat;
+      }
+      &--decrease{
+        font-size: 10px;
+        line-height: 7px;
+        color: #D0021B;
+        &::before{
+          background: url(./../images/stack/sprite.svg#arrow-bottom-red) no-repeat;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,26 @@
+@import './../constants';
+
+.search{
+  background: #fff;
+  border: 1px solid rgba(34, 62, 105, 0.1);
+  box-sizing: border-box;
+  border-radius: 5px;
+  outline: none;
+  padding: 16px 0 16px 14px;
+  width: 240px;
+  min-width: 119px;
+  font-family: @font;
+  &:hover{
+    background: rgba(34,62,105,.01);
+  }
+  &:focus{
+    border-color: rgba(34,62,105,.2);
+  }
+}
+
+@media (max-width: 970px) and (min-width: 700px){
+  .search{
+    width: 40%;
+    font-size: 69%;
+  }
+}
